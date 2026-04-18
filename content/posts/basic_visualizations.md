@@ -1,6 +1,6 @@
 +++
 date = '2026-04-17T20:23:42-04:00'
-draft = true
+draft = false
 title = 'Basic_visualizations'
 +++
 
