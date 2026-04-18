@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Lohits Blog and Website</title>
+    <link>https://LohitJ1729.github.io/</link>
+    <description>Recent content on Lohits Blog and Website</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 17 Apr 2026 19:56:03 -0400</lastBuildDate>
+    <atom:link href="https://LohitJ1729.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello_world</title>
+      <link>https://LohitJ1729.github.io/posts/hello_world/</link>
+      <pubDate>Fri, 17 Apr 2026 19:56:03 -0400</pubDate>
+      <guid>https://LohitJ1729.github.io/posts/hello_world/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;Hi everyone! I&amp;rsquo;m Lohit Jagarapu, a PhD student at NYU Courant Institute of Mathematical Sciences. I am currently studying computer science, more specifically graphics, and I want to share my journey as I learn the different topics in the field! This is my first post, so feel free to move on to any other posts if they exist already, so that you can see how far I&amp;rsquo;ve come.&lt;/p&gt;
+&lt;h2 id=&#34;the-plan&#34;&gt;The Plan&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Reading and writing up something interesting.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

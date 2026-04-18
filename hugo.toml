@@ -1,0 +1,14 @@
+baseURL = 'https://LohitJ1729.github.io/'
+locale = 'en-us'
+title = 'Lohits Blog and Website'
+theme = 'PaperMod'
+
+[params]
+  math = true
+  ShowReadingTime = true
+  ShowCodeCopyButtons = true
+
+[markup]
+  [goldmark]
+    [renderer]
+      unsafe = true
