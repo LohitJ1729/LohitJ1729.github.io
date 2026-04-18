@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+<h3>Fourier Series Approximation of a Square Wave</h3>
+
+<label>Number of terms: <span id="nValue">1</span></label><br>
+<input type="range" id="slider" min="1" max="25" step="2" value="1">
+
+<div id="plot" style="width:100%;height:500px;"></div>
+
+<script>
+function computeFourier(N) {
+    let x = [];
+    let y = [];
+
+    let numPoints = 400;
+    for (let i = 0; i < numPoints; i++) {
+        let xi = -Math.PI + 2*Math.PI*i/numPoints;
+        x.push(xi);
+
+        let sum = 0;
+        for (let k = 1; k <= N; k += 2) {
+            sum += (4/(Math.PI*k)) * Math.sin(k*xi);
+        }
+        y.push(sum);
+    }
+
+    return {x, y};
+}
+
+function updatePlot(N) {
+    let data = computeFourier(N);
+
+    Plotly.newPlot('plot', [{
+        x: data.x,
+        y: data.y,
+        mode: 'lines',
+        name: 'Approximation'
+    }], {
+        title: 'Fourier Approximation with N = ' + N
+    });
+}
+
+let slider = document.getElementById("slider");
+let nValue = document.getElementById("nValue");
+let square = x.map(v => v < 0 ? -1 : 1);
+
+slider.oninput = function() {
+    nValue.innerText = this.value;
+    updatePlot(parseInt(this.value));
+};
+
+// Initial plot
+updatePlot(1);
+</script>
+
+</body>
+</html>

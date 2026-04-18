@@ -1,7 +1,8 @@
 baseURL = 'https://LohitJ1729.github.io/'
 locale = 'en-us'
-title = 'Lohits Blog and Website'
+title = 'Blog: Lohits Technical Notes'
 theme = 'PaperMod'
+tags = ["featured", "computer_vision", "graphics", "math", "probability", "machine_learning", "statistics", "geometry", "topology"]
 
 [params]
   math = true
@@ -9,6 +10,6 @@ theme = 'PaperMod'
   ShowCodeCopyButtons = true
 
 [markup]
-  [goldmark]
-    [renderer]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
       unsafe = true

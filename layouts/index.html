@@ -1,0 +1,192 @@
+{{ define "main" }}
+
+<style>
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.hero-text h1 {
+  font-size: 2.5em;
+  margin-bottom: 5px;
+}
+
+.hero-text p {
+  color: gray;
+  font-size: 1.1em;
+}
+
+/* SECTION */
+.section {
+  margin-top: 50px;
+}
+
+.section h2 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* CARDS */
+.card {
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 15px;
+  transition: 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.card-meta {
+  font-size: 0.85em;
+  color: gray;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<div class="container">
+  <div class="hero">
+
+  <!-- PROFILE PHOTO -->
+  <div>
+    <img src="/images/Headshot_Square_Sunglasses.HEIC"
+         alt="Profile photo"
+         style="width:2000px; height:auto; border-radius:8px;">
+  </div>
+
+  <!-- TEXT + SOCIALS -->
+  <div class="hero-text">
+    <h1>Lohit J</h1>
+      <p>Mathematics • Graphics • Miscellaneous</p>
+
+      <p>
+        I'm a PhD student at the Courant Institute of Mathematical Sciences at NYU. My area of focus is computer graphics. This site documents my learning and projects.
+      </p>
+
+      <p>
+        <a href="https://github.com/LohitJ1729">GitHub</a> |
+        <a href="https://www.lohitjagarapu.com/">Website</a>
+      </p>
+
+    <!-- SOCIAL ICONS -->
+    <div style="margin-top:15px; display: flex; gap: 15px; align-items: center;">
+      <!-- <a href="https://github.com/LohitJ1729" target="_blank" style="margin-right:10px;"> <img src="/images/GitHub_Logos/SVG/GitHub_Invertocat_Black.svg"
+         alt="GitHub"
+         style="width:30px; height:auto; border-radius:8px;"> </a> -->
+      <a href="https://www.linkedin.com/in/lohitjagarapu" target="_blank" style="margin-right:10px;"> <img src="/images/LinkedIn_icon.png"
+         alt="LinkedIn"
+         style="width:30px; height:auto; border-radius:8px;"> </a>
+      <a href="https://bsky.app/profile/lohitj.bsky.social" target="_blank"> <img src="/images/Bluesky_Logo.png"
+         alt="Bluesky"
+         style="width:30px; height:auto; border-radius:8px;"> </a>
+    </div>
+    
+
+  </div>
+
+</div>
+
+  <!-- RESEARCH INTERESTS -->
+  <div class="section">
+    <h2>Research Interests</h2>
+    <p>
+      My interests are broad ranging, from graphics to topology to mathematical physics. What unites all of them is math - it was what I studied in undergrad, and the lens I use to understand new concepts. As I read different articles and learn new topics, I will post them here with a distinctly math-y flavor.
+    </p>
+  </div>
+
+  <!-- NEWS -->
+  <div class="section">
+    <h2>News</h2>
+    <p>
+      <ul>
+        <li>Just being a student :)</li>
+      </ul>
+    </p>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <h2>Education</h2>
+    <p>
+        <ul>
+            <li>Ph.D. at New York University's Courant Institute of Mathematical Sciences</li>
+            <li>B.S. Mathematics from The University of Texas at Austin as a <a href="https://cns.utexas.edu/news/accolades/celebrating-2025-college-natural-sciences-deans-honored-graduates" target="_blank" >Dean's Honored Graduate</a></li>
+        </ul>
+    </p>
+  </div>
+
+  <!-- WRITING -->
+  <div class="section">
+    <h2>Writing</h2>
+
+    {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+      <div class="card">
+        <div class="card-title">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </div>
+        <div class="card-meta">
+          {{ .Date.Format "Jan 2, 2006" }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <h2>Projects</h2>
+
+    <div class="grid">
+      {{ range where .Site.RegularPages "Section" "projects" }}
+        <div class="card">
+          <div class="card-title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </div>
+          <div class="card-meta">
+            {{ .Summary }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- FEATURED DEMO
+  <div class="section">
+    <h2>Interactive Demo</h2>
+    <p>Fourier series approximation of a square wave:</p>
+
+    <iframe src="/plots/fourier.html"
+            style="width:100%; height:500px; border:1px solid #ddd; border-radius:10px;">
+    </iframe>
+  </div> -->
+
+</div>
+
+{{ end }}
