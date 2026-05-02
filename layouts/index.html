@@ -58,6 +58,142 @@
   color: gray;
 }
 
+/* TIMELINE */
+.timeline {
+  position: relative;
+  padding-left: 28px;
+  margin-top: 15px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: #ddd;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -26px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #888;
+  border: 2px solid #fff;
+  outline: 2px solid #bbb;
+}
+
+.timeline-date {
+  font-size: 0.82em;
+  color: gray;
+  margin-bottom: 2px;
+}
+
+.timeline-title {
+  font-weight: bold;
+  font-size: 0.95em;
+}
+
+.timeline-desc {
+  font-size: 0.88em;
+  color: #666;
+  margin-top: 2px;
+}
+
+/* PAPER CARDS */
+.paper-card {
+  display: flex;
+  gap: 15px;
+  margin-top: 18px;
+  align-items: flex-start;
+}
+
+.paper-thumb {
+  width: 100px;
+  min-width: 100px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #e5e5e5;
+}
+
+.paper-thumb-placeholder {
+  width: 100px;
+  min-width: 100px;
+  height: 75px;
+  border-radius: 6px;
+  border: 1px solid #e5e5e5;
+  background: #f0f0f0;
+}
+
+.paper-title {
+  font-weight: bold;
+  font-size: 0.95em;
+}
+
+.paper-authors {
+  font-size: 0.85em;
+  color: #555;
+  margin-top: 3px;
+}
+
+.paper-venue {
+  font-size: 0.85em;
+  color: gray;
+  font-style: italic;
+  margin-top: 3px;
+}
+
+.paper-badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.badge {
+  font-size: 0.75em;
+  padding: 2px 9px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.badge-oral   { background: #fef3c7; color: #92400e; }
+.badge-poster { background: #dbeafe; color: #1e40af; }
+.badge-review { background: #f3e8ff; color: #6b21a8; }
+
+.paper-links {
+  font-size: 0.82em;
+  margin-top: 6px;
+}
+
+.paper-links a {
+  margin-right: 10px;
+}
+
+.research-subsection {
+  margin-top: 25px;
+}
+
+.research-subsection h3 {
+  font-size: 0.85em;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 2px;
+}
+
 /* GRID */
 .grid {
   display: grid;
@@ -125,11 +261,21 @@
   <!-- NEWS -->
   <div class="section">
     <h2>News</h2>
-    <p>
-      <ul>
-        <li>Just being a student :)</li>
-      </ul>
-    </p>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date">September 2025</div>
+        <div class="timeline-title">Started my PhD @ NYU Courant</div>
+        <div class="timeline-desc">Studying computer graphics, advised by Dr. Denis Zorin and Dr. Daniele Panozzo.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">May 2025</div>
+        <div class="timeline-title">Graduated B.S. Mathematics @ UT Austin</div>
+        <div class="timeline-desc">Graduated with Distinctions: Research + Service and Leadership.</div>
+      </div>
+
+    </div>
   </div>
 
   <!-- EDUCATION -->
@@ -141,6 +287,65 @@
             <li>B.S. Mathematics from The University of Texas at Austin as a <a href="https://cns.utexas.edu/news/accolades/celebrating-2025-college-natural-sciences-deans-honored-graduates" target="_blank" >Dean's Honored Graduate</a></li>
         </ul>
     </p>
+  </div>
+
+  <!-- RESEARCH -->
+  <div class="section">
+    <h2>Research</h2>
+
+    <div class="research-subsection">
+      <details open>
+        <summary><h3 style="display:inline; cursor:pointer;">Ongoing Work</h3></summary>
+
+        <div class="paper-card">
+          <div class="paper-thumb-placeholder"></div>
+          <div class="paper-info">
+            <div class="paper-title">Paper Title</div>
+            <div class="paper-authors"><strong>Lohit J</strong>, Co-Author Name</div>
+            <div class="paper-venue">In preparation</div>
+          </div>
+        </div>
+
+      </details>
+    </div>
+
+    <div class="research-subsection">
+      <h3>Under Review</h3>
+
+      <div class="paper-card">
+        <div class="paper-thumb-placeholder"></div>
+        <div class="paper-info">
+          <div class="paper-title">Paper Title</div>
+          <div class="paper-authors"><strong>Lohit J</strong>, Co-Author Name</div>
+          <div class="paper-venue">Under Review: Conference Name 2026</div>
+          <div class="paper-badges">
+            <span class="badge badge-review">Under Review</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="research-subsection">
+      <h3>Publications</h3>
+
+      <div class="paper-card">
+        <div class="paper-thumb-placeholder"></div>
+        <div class="paper-info">
+          <div class="paper-title">Paper Title</div>
+          <div class="paper-authors"><strong>Lohit J</strong>, Co-Author Name</div>
+          <div class="paper-venue">Conference / Journal Name 2025</div>
+          <div class="paper-badges">
+            <span class="badge badge-oral">Oral</span>
+          </div>
+          <div class="paper-links">
+            <a href="#">[Paper]</a>
+            <a href="#">[Code]</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <!-- WRITING -->
@@ -188,5 +393,27 @@
   </div> -->
 
 </div>
+
+<!-- ⏺ Done. The Research section is now in your layouts/index.html with three subsections.
+  Here's how to customize each entry:                                                     
+
+  To add a paper with a thumbnail image, replace <div                                     
+  class="paper-thumb-placeholder"></div> with:
+  <img class="paper-thumb" src="/images/paper-thumbnail.png" alt="paper thumbnail">       
+                                                                                        
+  To add/change badges, use any combination of:                                           
+  <span class="badge badge-oral">Oral</span>                                              
+  <span class="badge badge-poster">Poster</span>                                          
+  <span class="badge badge-review">Under Review</span>                                    
+                                                            
+  To add links:                                                                           
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/XXXX.XXXXX">[Paper]</a>                                
+    <a href="https://github.com/...">[Code]</a>             
+  </div>                                                                                  
+                                                                                          
+  For co-authors, * after a name conventionally means equal contribution — just add it as 
+  plain text in .paper-authors. The placeholders are there until you have real entries to 
+  fill in.  -->
 
 {{ end }}
