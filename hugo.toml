@@ -9,6 +9,9 @@ tags = ["featured", "computer_vision", "graphics", "math", "probability", "machi
   ShowReadingTime = true
   ShowCodeCopyButtons = true
 
+[params.assets]
+  favicon32x32 = "/favicon-32x32.png"
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
