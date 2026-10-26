@@ -2,7 +2,7 @@ baseURL = 'https://LohitJ1729.github.io/'
 locale = 'en-us'
 title = 'Lohit Jagarapu'
 theme = 'PaperMod'
-tags = ["featured", "computer_vision", "graphics", "math", "probability", "machine_learning", "statistics", "geometry", "topology", "RL"]
+tags = ["featured", "computer_vision", "graphics", "math", "probability", "machine_learning", "statistics", "geometry", "topology", "RL", "continuum_mechanics", "physics", "field_theory"]
 
 [params]
   math = true
